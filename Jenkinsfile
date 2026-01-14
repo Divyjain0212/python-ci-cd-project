@@ -34,6 +34,11 @@ pipeline {
                 sshagent(credentials: ['aws-ec2-key']) {
                 sh '''
                 ssh ec2-user@13.126.47.76 << EOF
+
+                  if [ ! -d "/home/ec2-user/python-ci-cd-project" ]; then
+                    git clone https://github.com/Divyjain0212/python-ci-cd-project.git
+                  fi
+                  
                   cd /home/ec2-user/python-ci-cd-project || exit 1
                   git pull
                   pip3 install -r requirements.txt
