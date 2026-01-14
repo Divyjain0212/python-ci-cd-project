@@ -34,7 +34,7 @@ pipeline {
                 sshagent(credentials: ['aws-ec2-key']) {
                 sh '''
                 ssh ec2-user@13.126.47.76 << EOF
-                  cd /app || exit 1
+                  cd /home/ec2-user/python-ci-cd-project || exit 1
                   git pull
                   pip3 install -r requirements.txt
                   nohup python3 app.py > app.log 2>&1 &
