@@ -5,7 +5,8 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/Divyjain0212/python-ci-cd-project.git'
+                git branch: 'main',
+                    url: 'https://github.com/Divyjain0212/python-ci-cd-project.git'
             }
         }
 
