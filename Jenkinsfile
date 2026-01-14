@@ -31,6 +31,7 @@ pipeline {
 
         stage('Deploy to AWS') {
             steps {
+                sshagent(credentials: ['aws-ec2-key']) {
                 sh '''
                 ssh ec2-user@13.126.47.76 << EOF
                   cd /app || exit 1
@@ -39,6 +40,7 @@ pipeline {
                   nohup python3 app.py > app.log 2>&1 &
                 EOF
                 '''
+                }
             }
         }
     }
