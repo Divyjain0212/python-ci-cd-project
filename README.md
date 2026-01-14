@@ -34,7 +34,7 @@ This project demonstrates how to build an **automated CI/CD pipeline** using **J
 ---
 
 ## Project Structure
-
+```bash
 python-ci-cd-project/
 │
 ├── app.py # Flask application
@@ -42,7 +42,7 @@ python-ci-cd-project/
 ├── requirements.txt # Python dependencies
 ├── Jenkinsfile # Jenkins pipeline script
 └── README.md # Project documentation
-
+```
 
 ---
 
